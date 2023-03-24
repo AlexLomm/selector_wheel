@@ -18,9 +18,13 @@ class SelectorWheelFadeGradient extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final begin = direction == SelectorWheelFadeGradientDirection.toTop ? Alignment.bottomCenter : Alignment.topCenter;
+    final begin = direction == SelectorWheelFadeGradientDirection.toTop
+        ? Alignment.bottomCenter
+        : Alignment.topCenter;
 
-    final end = direction == SelectorWheelFadeGradientDirection.toTop ? Alignment.topCenter : Alignment.bottomCenter;
+    final end = direction == SelectorWheelFadeGradientDirection.toTop
+        ? Alignment.topCenter
+        : Alignment.bottomCenter;
 
     return IgnorePointer(
       child: SizedBox(

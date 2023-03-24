@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SelectorWheelFixedExtentScrollPhysics extends FixedExtentScrollPhysics {
-  const SelectorWheelFixedExtentScrollPhysics({ScrollPhysics? parent}) : super(parent: parent);
+  const SelectorWheelFixedExtentScrollPhysics({ScrollPhysics? parent})
+      : super(parent: parent);
 
   @override
   SpringDescription get spring {

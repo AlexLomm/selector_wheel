@@ -109,11 +109,14 @@ class _SelectorWheelState<T> extends State<SelectorWheel<T>> {
     _streamController = StreamController<T>.broadcast();
 
     if (widget.enableHapticFeedback) {
-      _streamController.stream.distinct().listen((value) => HapticFeedback.lightImpact());
+      _streamController.stream
+          .distinct()
+          .listen((value) => HapticFeedback.lightImpact());
     }
 
     _controller = FixedExtentScrollController()
-      ..addListener(() => _streamController.sink.add(widget.convertIndexToValue(_controller.selectedItem).value));
+      ..addListener(() => _streamController.sink
+          .add(widget.convertIndexToValue(_controller.selectedItem).value));
 
     // if the selectedItemIndex is set, jump to it after the first frame
     if (widget.selectedItemIndex != null) {
