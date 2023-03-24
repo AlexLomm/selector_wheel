@@ -1,7 +1,12 @@
 name: selector_wheel
-description: A new Flutter package project.
-version: 0.0.1
-homepage:
+description: A Flutter package for creating a customizable value selector wheel.
+version: 1.0.0
+repository: https://github.com/AlexLomm/selector_wheel
+screenshots:
+  - description: Different use cases for the SelectorWheel widget
+    url: ./screenshots/example-1.png
+  - description: Use case with a bottom sheet
+    url: ./screenshots/example-2.jpeg
 
 environment:
   sdk: '>=2.19.3 <3.0.0'
@@ -17,7 +22,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
