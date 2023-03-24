@@ -25,6 +25,7 @@ class SelectorWheelFadeGradient extends StatelessWidget {
     return IgnorePointer(
       child: SizedBox(
         width: width,
+        height: height,
         child: Container(
           width: width,
           height: height,
