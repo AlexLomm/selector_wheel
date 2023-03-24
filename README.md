@@ -1,5 +1,8 @@
 # Selector Wheel
 
+[![pub package](https://img.shields.io/pub/v/selector_wheel.svg)](https://pub.dartlang.org/packages/selector_wheel)
+[![codecov](https://codecov.io/gh/AlexLomm/selector_wheel/branch/main/graph/badge.svg)](https://codecov.io/gh/AlexLomm/selector_wheel)
+
 A Flutter package for creating customizable selector wheel widgets.
 
 ## Table of Contents
