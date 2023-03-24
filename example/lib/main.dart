@@ -89,8 +89,8 @@ class _Background extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200.0,
-      height: 200.0,
+      width: 180.0,
+      height: 180.0,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16.0),
         color: Theme.of(context).colorScheme.surface,
