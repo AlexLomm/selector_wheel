@@ -21,8 +21,8 @@ A Flutter package for creating customizable selector wheel widgets.
 - Can be used with any data type
 
 <p align="middle">
-  <img src="./github_static/example-1.png" alt="Usage example regular" height="550">
-  <img src="./github_static/example-2.jpeg" alt="Usage example with bottom sheet" height="550" style="margin-left: 32px">
+  <img src="./screenshots/example-1.png" alt="Usage example regular" height="550">
+  <img src="./screenshots/example-2.jpeg" alt="Usage example with bottom sheet" height="550" style="margin-left: 32px">
 </p>
 
 ## Getting started
