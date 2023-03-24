@@ -29,6 +29,12 @@ class SelectorWheel<T> extends StatefulWidget {
 
   /// If true, the wheel will fade out at the top and bottom.
   ///
+  /// Please note that this feature works only when the background
+  /// of the wheel is a solid color. i.e the overridden
+  /// `colorScheme.surface` color must be a solid color (with opacity
+  /// of 1.0). If this is not the case, the fade out will be disabled
+  /// automatically.
+  ///
   /// @default true
   final bool enableFadeOut;
 
@@ -125,6 +131,10 @@ class _SelectorWheelState<T> extends State<SelectorWheel<T>> {
 
   @override
   Widget build(BuildContext context) {
+    final surfaceColor = Theme.of(context).colorScheme.surface;
+
+    final enableFadeOut = widget.enableFadeOut && surfaceColor.opacity == 1.0;
+
     return Stack(
       children: [
         Align(
@@ -146,7 +156,7 @@ class _SelectorWheelState<T> extends State<SelectorWheel<T>> {
             onValueChanged: widget.onValueChanged,
           ),
         ),
-        if (widget.enableFadeOut) ...[
+        if (enableFadeOut) ...[
           Align(
             alignment: Alignment.topCenter,
             child: LayoutBuilder(
@@ -154,6 +164,7 @@ class _SelectorWheelState<T> extends State<SelectorWheel<T>> {
                 return SelectorWheelFadeGradient(
                   height: constraints.maxHeight * widget.fadeOutHeightFraction,
                   width: widget.width,
+                  color: surfaceColor,
                   direction: SelectorWheelFadeGradientDirection.toBottom,
                 );
               },
@@ -166,6 +177,7 @@ class _SelectorWheelState<T> extends State<SelectorWheel<T>> {
                 return SelectorWheelFadeGradient(
                   height: constraints.maxHeight * widget.fadeOutHeightFraction,
                   width: widget.width,
+                  color: surfaceColor,
                   direction: SelectorWheelFadeGradientDirection.toTop,
                 );
               },

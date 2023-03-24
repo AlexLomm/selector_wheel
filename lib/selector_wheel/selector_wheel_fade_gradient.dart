@@ -5,12 +5,14 @@ enum SelectorWheelFadeGradientDirection { toTop, toBottom }
 class SelectorWheelFadeGradient extends StatelessWidget {
   final double width;
   final double height;
+  final Color color;
   final SelectorWheelFadeGradientDirection direction;
 
   const SelectorWheelFadeGradient({
     Key? key,
     required this.width,
     required this.height,
+    required this.color,
     required this.direction,
   }) : super(key: key);
 
@@ -30,10 +32,7 @@ class SelectorWheelFadeGradient extends StatelessWidget {
             gradient: LinearGradient(
               begin: begin,
               end: end,
-              colors: [
-                Theme.of(context).colorScheme.surface,
-                Theme.of(context).colorScheme.surface.withOpacity(0.0),
-              ],
+              colors: [color, color.withOpacity(0.0)],
             ),
           ),
         ),
