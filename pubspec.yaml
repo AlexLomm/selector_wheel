@@ -1,6 +1,6 @@
 name: selector_wheel
 description: A Flutter package for creating a customizable value selector wheel.
-version: 1.0.1
+version: 1.0.2
 repository: https://github.com/AlexLomm/selector_wheel
 screenshots:
   - description: Different use cases for the SelectorWheel widget
