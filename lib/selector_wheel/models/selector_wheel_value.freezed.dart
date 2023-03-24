@@ -16,8 +16,14 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$SelectorWheelValue<T> {
+  /// The string representation of the [value]. This
+  /// is what will be displayed in the wheel.
   String get label => throw _privateConstructorUsedError;
+
+  /// The value of the wheel item.
   T get value => throw _privateConstructorUsedError;
+
+  /// The index of the wheel item.
   int get index => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -120,10 +126,16 @@ class _$_SelectorWheelValue<T>
   const _$_SelectorWheelValue(
       {required this.label, required this.value, required this.index});
 
+  /// The string representation of the [value]. This
+  /// is what will be displayed in the wheel.
   @override
   final String label;
+
+  /// The value of the wheel item.
   @override
   final T value;
+
+  /// The index of the wheel item.
   @override
   final int index;
 
@@ -171,10 +183,17 @@ abstract class _SelectorWheelValue<T> implements SelectorWheelValue<T> {
       required final int index}) = _$_SelectorWheelValue<T>;
 
   @override
+
+  /// The string representation of the [value]. This
+  /// is what will be displayed in the wheel.
   String get label;
   @override
+
+  /// The value of the wheel item.
   T get value;
   @override
+
+  /// The index of the wheel item.
   int get index;
   @override
   @JsonKey(ignore: true)
