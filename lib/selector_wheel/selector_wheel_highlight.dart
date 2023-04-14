@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class SelectorWheelHighlight extends StatelessWidget {
   final double width;
   final double height;
-  final double borderRadius;
+  final BorderRadiusGeometry borderRadius;
 
   const SelectorWheelHighlight({
     Key? key,
@@ -23,7 +23,7 @@ class SelectorWheelHighlight extends StatelessWidget {
           height: width,
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.secondaryContainer,
-            borderRadius: BorderRadius.circular(borderRadius),
+            borderRadius: borderRadius,
           ),
         ),
       ),
