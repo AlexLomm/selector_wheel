@@ -9,12 +9,12 @@ void main() {
     const testBorderRadius = 10.0;
 
     await tester.pumpWidget(
-      const MaterialApp(
+       MaterialApp(
         home: Material(
           child: SelectorWheelHighlight(
             width: testWidth,
             height: testHeight,
-            borderRadius: testBorderRadius,
+            borderRadius: BorderRadius.circular(testBorderRadius),
           ),
         ),
       ),
@@ -50,10 +50,10 @@ void main() {
                 secondaryContainer: testColor,
               ),
             ),
-            child: const SelectorWheelHighlight(
+            child: SelectorWheelHighlight(
               width: 100,
               height: 50,
-              borderRadius: 10,
+              borderRadius: BorderRadius.circular(8.0)
             ),
           ),
         ),
