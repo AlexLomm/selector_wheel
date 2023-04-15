@@ -1,10 +1,9 @@
 ## 1.1.0
-  - BREAKING: `borderRadius` constuctor argument type is now `BorderRadiusGeometry`
+  - BREAKING: `borderRadius` constructor argument type is now `BorderRadiusGeometry`
   - Add optional wheel `perspective` argument to constructor
   - Add optional wheel `diameterRatio` argument to constructor  
   - Update tests
   - Update example
-  - Bump version
 
 ## 1.0.2
 - Improve formatting of the source files
