@@ -11,6 +11,8 @@ class SelectorWheelWheel<T> extends StatelessWidget {
   final FixedExtentScrollController controller;
   final SelectorWheelValue<T> Function(int index) convertIndexToValue;
   final void Function(SelectorWheelValue<T> value) onValueChanged;
+  final double? perspective;
+  final double? diameterRatio;
 
   const SelectorWheelWheel({
     Key? key,
@@ -20,6 +22,8 @@ class SelectorWheelWheel<T> extends StatelessWidget {
     required this.controller,
     required this.convertIndexToValue,
     required this.onValueChanged,
+    this.perspective,
+    this.diameterRatio,
   }) : super(key: key);
 
   @override
@@ -39,8 +43,8 @@ class SelectorWheelWheel<T> extends StatelessWidget {
         child: ListWheelScrollView.useDelegate(
           controller: controller,
           itemExtent: height,
-          perspective: 0.009,
-          diameterRatio: 2.0,
+          perspective: perspective ?? 0.009,
+          diameterRatio: diameterRatio ?? 2.0,
           physics: const SelectorWheelFixedExtentScrollPhysics(),
           childDelegate: ListWheelChildBuilderDelegate(
             childCount: childCount,

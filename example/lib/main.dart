@@ -59,7 +59,7 @@ class MainApp extends StatelessWidget {
                   child: SelectorWheel(
                     childCount: 10,
                     childHeight: 48.0,
-                    highlightBorderRadius: 32.0,
+                    highlightBorderRadius: BorderRadius.circular(32.0),
                     highlightHeight: 48.0,
                     highlightWidth: 120.0,
                     fadeOutHeightFraction: 0.33,
@@ -94,7 +94,7 @@ class MainApp extends StatelessWidget {
                       child: SelectorWheel(
                         width: 60.0,
                         childCount: 10,
-                        highlightBorderRadius: 4,
+                        highlightBorderRadius: BorderRadius.circular(4.0),
                         convertIndexToValue: (int index) {
                           final value = index * 5;
 
@@ -135,7 +135,7 @@ class MainApp extends StatelessWidget {
                       child: SelectorWheel(
                         width: 60.0,
                         childCount: 4,
-                        highlightBorderRadius: 4,
+                        highlightBorderRadius: BorderRadius.circular(4),
                         convertIndexToValue: (int index) {
                           const fruits = ['🍇', '🍍', '🍒', '🥥', '🍓', '🥭', '🍈'];
 

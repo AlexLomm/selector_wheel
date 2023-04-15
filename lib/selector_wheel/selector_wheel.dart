@@ -64,8 +64,8 @@ class SelectorWheel<T> extends StatefulWidget {
 
   /// Selector wheel's highlighted area border radius.
   ///
-  /// @default 8.0
-  final double highlightBorderRadius;
+  /// @default BorderRadius.circular(8.0)
+  final BorderRadiusGeometry? highlightBorderRadius;
 
   /// Selector wheel's highlighted area height.
   ///
@@ -76,6 +76,10 @@ class SelectorWheel<T> extends StatefulWidget {
   ///
   /// @default [width]
   final double? highlightWidth;
+
+  final double? perspective;
+
+  final double? diameterRatio;
 
   const SelectorWheel({
     super.key,
@@ -88,9 +92,11 @@ class SelectorWheel<T> extends StatefulWidget {
     this.enableFadeOut = true,
     this.fadeOutHeightFraction = 0.36,
     this.enableHapticFeedback = true,
-    this.highlightBorderRadius = 8.0,
+    this.highlightBorderRadius,
     this.highlightHeight,
     this.highlightWidth,
+    this.perspective,
+    this.diameterRatio,
   }) : assert(fadeOutHeightFraction >= 0.0 && fadeOutHeightFraction <= 1.0);
 
   @override
@@ -138,6 +144,8 @@ class _SelectorWheelState<T> extends State<SelectorWheel<T>> {
 
     final enableFadeOut = widget.enableFadeOut && surfaceColor.opacity == 1.0;
 
+    final borderRadius = widget.highlightBorderRadius ?? BorderRadius.circular(8.0);
+
     return Stack(
       children: [
         Align(
@@ -145,7 +153,7 @@ class _SelectorWheelState<T> extends State<SelectorWheel<T>> {
           child: SelectorWheelHighlight(
             height: widget.highlightHeight ?? widget.childHeight,
             width: widget.highlightWidth ?? widget.width,
-            borderRadius: widget.highlightBorderRadius,
+            borderRadius: borderRadius,
           ),
         ),
         Align(
@@ -157,6 +165,8 @@ class _SelectorWheelState<T> extends State<SelectorWheel<T>> {
             width: widget.width,
             convertIndexToValue: widget.convertIndexToValue,
             onValueChanged: widget.onValueChanged,
+            perspective: widget.perspective,
+            diameterRatio: widget.diameterRatio,
           ),
         ),
         if (enableFadeOut) ...[
