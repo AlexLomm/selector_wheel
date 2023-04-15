@@ -64,7 +64,7 @@ class SelectorWheel<T> extends StatefulWidget {
 
   /// Selector wheel's highlighted area border radius.
   ///
-  /// @default BorderRadius.circual(8.0)
+  /// @default BorderRadius.circular(8.0)
   final BorderRadiusGeometry? highlightBorderRadius;
 
   /// Selector wheel's highlighted area height.
