@@ -114,11 +114,11 @@ class _SelectorWheelState<T> extends State<SelectorWheel<T>> {
 
     _streamController = StreamController<T>.broadcast();
 
-    if (widget.enableHapticFeedback) {
-      _streamController.stream
-          .distinct()
-          .listen((value) => HapticFeedback.lightImpact());
-    }
+    _streamController.stream.distinct().listen(
+      (value) {
+        if (widget.enableHapticFeedback) HapticFeedback.lightImpact();
+      },
+    );
 
     _controller = FixedExtentScrollController()
       ..addListener(() => _streamController.sink
