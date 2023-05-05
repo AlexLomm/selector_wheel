@@ -1,3 +1,7 @@
+## 1.1.2
+
+- Fix the `enableHapticFeedback` only being applied once during init. Now the `enableHapticFeedback` is applied every time it changes.
+
 ## 1.1.1
 
 - Fix SelectorWheel not reacting to the `selectedItemIndex` change after initial load
