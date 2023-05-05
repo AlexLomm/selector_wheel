@@ -3,13 +3,15 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:selector_wheel/selector_wheel/selector_wheel_highlight.dart';
 
 void main() {
-  testWidgets('SelectorWheelHighlight renders correctly with custom width, height, and borderRadius', (WidgetTester tester) async {
+  testWidgets(
+      'SelectorWheelHighlight renders correctly with custom width, height, and borderRadius',
+      (WidgetTester tester) async {
     const testWidth = 100.0;
     const testHeight = 50.0;
     const testBorderRadius = 10.0;
 
     await tester.pumpWidget(
-       MaterialApp(
+      MaterialApp(
         home: Material(
           child: SelectorWheelHighlight(
             width: testWidth,
@@ -38,7 +40,8 @@ void main() {
     expect(decoration.borderRadius, BorderRadius.circular(testBorderRadius));
   });
 
-  testWidgets('SelectorWheelHighlight uses correct color from theme', (WidgetTester tester) async {
+  testWidgets('SelectorWheelHighlight uses correct color from theme',
+      (WidgetTester tester) async {
     const testColor = Colors.red;
 
     await tester.pumpWidget(
@@ -51,10 +54,9 @@ void main() {
               ),
             ),
             child: SelectorWheelHighlight(
-              width: 100,
-              height: 50,
-              borderRadius: BorderRadius.circular(8.0)
-            ),
+                width: 100,
+                height: 50,
+                borderRadius: BorderRadius.circular(8.0)),
           ),
         ),
       ),

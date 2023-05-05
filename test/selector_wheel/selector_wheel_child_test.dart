@@ -3,7 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:selector_wheel/selector_wheel/selector_wheel_child.dart';
 
 void main() {
-  testWidgets('SelectorWheelChild displays the given value', (WidgetTester tester) async {
+  testWidgets('SelectorWheelChild displays the given value',
+      (WidgetTester tester) async {
     const testValue = '42';
     await tester.pumpWidget(
       const MaterialApp(
@@ -21,7 +22,8 @@ void main() {
     expect(textFinder, findsOneWidget);
   });
 
-  testWidgets('SelectorWheelChild has the correct width and height', (WidgetTester tester) async {
+  testWidgets('SelectorWheelChild has the correct width and height',
+      (WidgetTester tester) async {
     const testWidth = 100.0;
     const testHeight = 50.0;
 
@@ -45,7 +47,8 @@ void main() {
     expect(sizedBox.height, testHeight);
   });
 
-  testWidgets('SelectorWheelChild has the correct text style', (WidgetTester tester) async {
+  testWidgets('SelectorWheelChild has the correct text style',
+      (WidgetTester tester) async {
     const testValue = '42';
 
     await tester.pumpWidget(
@@ -63,9 +66,11 @@ void main() {
     final textWidget = tester.widget<Text>(find.text(testValue));
     expect(textWidget.style, isNotNull);
 
-    final BuildContext context = tester.element(find.byType(SelectorWheelChild));
+    final BuildContext context =
+        tester.element(find.byType(SelectorWheelChild));
     final ThemeData theme = Theme.of(context);
-    final TextStyle? textStyle = theme.textTheme.titleLarge?.copyWith(color: theme.colorScheme.onSurface);
+    final TextStyle? textStyle = theme.textTheme.titleLarge
+        ?.copyWith(color: theme.colorScheme.onSurface);
 
     expect(textWidget.style, textStyle);
   });

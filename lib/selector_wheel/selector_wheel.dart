@@ -155,7 +155,8 @@ class _SelectorWheelState<T> extends State<SelectorWheel<T>> {
 
     final enableFadeOut = widget.enableFadeOut && surfaceColor.opacity == 1.0;
 
-    final borderRadius = widget.highlightBorderRadius ?? BorderRadius.circular(8.0);
+    final borderRadius =
+        widget.highlightBorderRadius ?? BorderRadius.circular(8.0);
 
     return Stack(
       children: [

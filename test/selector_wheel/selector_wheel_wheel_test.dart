@@ -5,7 +5,9 @@ import 'package:selector_wheel/selector_wheel/selector_wheel_fixed_extent_scroll
 import 'package:selector_wheel/selector_wheel/selector_wheel_wheel.dart';
 
 void main() {
-  testWidgets('SelectorWheelWheel renders correctly with provided width, height, childCount, and controller', (
+  testWidgets(
+      'SelectorWheelWheel renders correctly with provided width, height, childCount, and controller',
+      (
     WidgetTester tester,
   ) async {
     const testWidth = 100.0;
@@ -48,16 +50,20 @@ void main() {
     final sizedBox = tester.widget<SizedBox>(sizedBoxFinder);
     expect(sizedBox.width, testWidth);
 
-    final listWheelScrollView = tester.widget<ListWheelScrollView>(listWheelScrollViewFinder);
+    final listWheelScrollView =
+        tester.widget<ListWheelScrollView>(listWheelScrollViewFinder);
     expect(listWheelScrollView.itemExtent, testHeight);
     expect(listWheelScrollView.diameterRatio, 2.0);
-    expect(listWheelScrollView.physics, isInstanceOf<SelectorWheelFixedExtentScrollPhysics>());
+    expect(listWheelScrollView.physics,
+        isInstanceOf<SelectorWheelFixedExtentScrollPhysics>());
 
-    final childBuilderDelegate = listWheelScrollView.childDelegate as ListWheelChildBuilderDelegate;
+    final childBuilderDelegate =
+        listWheelScrollView.childDelegate as ListWheelChildBuilderDelegate;
     expect(childBuilderDelegate.childCount, testChildCount);
   });
 
-  testWidgets('SelectorWheelWheel calls onValueChanged callback on scroll end', (WidgetTester tester) async {
+  testWidgets('SelectorWheelWheel calls onValueChanged callback on scroll end',
+      (WidgetTester tester) async {
     const testWidth = 100.0;
     const testHeight = 50.0;
     const testChildCount = 5;

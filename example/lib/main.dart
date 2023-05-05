@@ -44,10 +44,11 @@ class MainApp extends StatelessWidget {
                 // Overriding the colors of the selector wheel
                 data: ThemeData(
                   textTheme: Theme.of(context).textTheme.copyWith(
-                        titleLarge: Theme.of(context).textTheme.titleLarge?.copyWith(
-                              fontSize: 24.0,
-                              fontWeight: FontWeight.w600,
-                            ),
+                        titleLarge:
+                            Theme.of(context).textTheme.titleLarge?.copyWith(
+                                  fontSize: 24.0,
+                                  fontWeight: FontWeight.w600,
+                                ),
                       ),
                   colorScheme: Theme.of(context).colorScheme.copyWith(
                         surface: Colors.black,
@@ -67,7 +68,8 @@ class MainApp extends StatelessWidget {
                       final fraction = index / 4;
                       final value = '${fraction.toStringAsFixed(2)} lb';
 
-                      return SelectorWheelValue(label: value, value: fraction, index: index);
+                      return SelectorWheelValue(
+                          label: value, value: fraction, index: index);
                     },
                     onValueChanged: (value) {
                       // ignore: avoid_print
@@ -115,13 +117,17 @@ class MainApp extends StatelessWidget {
                       child: Text(
                         '✕',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600),
+                        style: TextStyle(
+                            fontSize: 16.0, fontWeight: FontWeight.w600),
                       ),
                     ),
                     Theme(
                       data: Theme.of(context).copyWith(
                         textTheme: Theme.of(context).textTheme.copyWith(
-                              titleLarge: Theme.of(context).textTheme.titleLarge?.copyWith(
+                              titleLarge: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge
+                                  ?.copyWith(
                                     fontSize: 24.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -137,11 +143,20 @@ class MainApp extends StatelessWidget {
                         childCount: 4,
                         highlightBorderRadius: BorderRadius.circular(4),
                         convertIndexToValue: (int index) {
-                          const fruits = ['🍇', '🍍', '🍒', '🥥', '🍓', '🥭', '🍈'];
+                          const fruits = [
+                            '🍇',
+                            '🍍',
+                            '🍒',
+                            '🥥',
+                            '🍓',
+                            '🥭',
+                            '🍈'
+                          ];
 
                           final value = fruits[index];
 
-                          return SelectorWheelValue(label: value, value: value, index: index);
+                          return SelectorWheelValue(
+                              label: value, value: value, index: index);
                         },
                         onValueChanged: (SelectorWheelValue<String> value) {
                           // ignore: avoid_print
