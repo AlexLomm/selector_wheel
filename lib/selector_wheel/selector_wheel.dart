@@ -133,6 +133,17 @@ class _SelectorWheelState<T> extends State<SelectorWheel<T>> {
   }
 
   @override
+  void didUpdateWidget(oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (widget.selectedItemIndex != null) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _controller.jumpToItem(widget.selectedItemIndex!);
+      });
+    }
+  }
+
+  @override
   void dispose() {
     _streamController.close();
     super.dispose();
